@@ -11,7 +11,7 @@
     <a href="https://packagist.org/packages/mckenziearts/livewire-markdown-editor"><img src="https://img.shields.io/packagist/l/mckenziearts/livewire-markdown-editor" alt="License"></a>
 </p>
 
-GitHub-style Markdown editor for Laravel with Livewire and Alpine.js. This module provides a complete, standalone markdown editing experience with full dark mode support.
+GitHub-style Markdown editor for Laravel with Livewire and Alpine.js. This module provides a complete, standalone Markdown editing experience with full dark mode support.
 
 ## Dependencies
 
