@@ -1,6 +1,10 @@
 # Laravel Markdown Editor
 
 <p>
+    <img src="art/banner.png" alt="Markdown Livewire Banner" />
+</p>
+
+<p>
     <a href="https://github.com/mckenziearts/livewire-markdown-editor/actions"><img src="https://github.com/mckenziearts/livewire-markdown-editor/actions/workflows/ci.yml/badge.svg" alt="Build Status"></a>
     <a href="https://packagist.org/packages/mckenziearts/livewire-markdown-editor"><img src="https://img.shields.io/packagist/dt/mckenziearts/livewire-markdown-editor" alt="Total Downloads"></a>
     <a href="https://packagist.org/packages/mckenziearts/livewire-markdown-editor"><img src="https://img.shields.io/packagist/v/mckenziearts/livewire-markdown-editor" alt="Latest Stable Version"></a>
