@@ -1,24 +1,24 @@
 <div class="w-full">
     <div
         x-data="{ preview: false }"
-        class="ring-1 ring-gray-200 rounded-lg overflow-hidden dark:ring-white/20"
+        class="ring-1 ring-zinc-200 rounded-lg overflow-hidden dark:ring-white/20"
     >
-        <div class="flex gap-4 border-b border-gray-200 bg-gray-50 dark:bg-white/6 dark:border-white/10">
+        <div class="flex gap-4 border-b border-zinc-200 bg-zinc-50 dark:bg-white/6 dark:border-white/10">
             <!-- Tabs view Mode -->
             <div class="flex">
                 <button
                     type="button"
                     @click="preview = false"
-                    :class="!preview ? 'text-gray-900 ring-1 rounded-t-lg ring-gray-200 dark:ring-white/10 dark:text-white bg-white dark:bg-white/10' : 'text-gray-700 dark:text-gray-300'"
-                    class="px-4 py-2.5 text-sm font-medium transition hover:text-gray-900 dark:hover:text-white"
+                    :class="!preview ? 'text-zinc-900 ring-1 rounded-t-lg ring-zinc-200 dark:ring-white/10 dark:text-white bg-white dark:bg-white/10' : 'text-zinc-700 dark:text-zinc-300'"
+                    class="px-4 py-2.5 text-sm font-medium transition hover:text-zinc-900 dark:hover:text-white"
                 >
                     {{ __('livewire-markdown-editor::editor.write') }}
                 </button>
                 <button
                     type="button"
                     @click="preview = true"
-                    :class="preview ? 'text-gray-900 ring-1 rounded-t-lg ring-gray-200 dark:ring-white/10 dark:text-white bg-white dark:bg-white/10' : 'text-gray-700 dark:text-gray-300'"
-                    class="px-4 py-2.5 text-sm font-medium transition hover:text-gray-900 dark:hover:text-white"
+                    :class="preview ? 'text-zinc-900 ring-1 rounded-t-lg ring-zinc-200 dark:ring-white/10 dark:text-white bg-white dark:bg-white/10' : 'text-zinc-700 dark:text-zinc-300'"
+                    class="px-4 py-2.5 text-sm font-medium transition hover:text-zinc-900 dark:hover:text-white"
                 >
                     {{ __('livewire-markdown-editor::editor.preview') }}
                 </button>
@@ -32,71 +32,71 @@
                         class="flex items-center gap-1 px-2"
                     >
                         <md-header>
-                            <button type="button" class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300" title="{{ __('livewire-markdown-editor::editor.toolbars.heading') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.heading') }}">
                                 <x-phosphor-text-h class="size-5" aria-hidden="true" />
                             </button>
                         </md-header>
 
                         <md-bold>
-                            <button type="button" class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300" title="{{ __('livewire-markdown-editor::editor.toolbars.bold') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.bold') }}">
                                 <x-phosphor-text-b class="size-5" aria-hidden="true" />
                             </button>
                         </md-bold>
 
                         <md-italic>
-                            <button type="button" class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300" title="{{ __('livewire-markdown-editor::editor.toolbars.italic') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.italic') }}">
                                 <x-phosphor-text-italic class="size-5" aria-hidden="true" />
                             </button>
                         </md-italic>
 
                         <md-quote>
-                            <button type="button" class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-700 dark:text-gray-300" title="{{ __('livewire-markdown-editor::editor.toolbars.quote') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.quote') }}">
                                 <x-phosphor-quotes class="size-5" aria-hidden="true" />
                             </button>
                         </md-quote>
 
                         <md-code>
-                            <button type="button" class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-700 dark:text-gray-300" title="{{ __('livewire-markdown-editor::editor.toolbars.code') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.code') }}">
                                 <x-phosphor-code-simple class="size-5" aria-hidden="true" />
                             </button>
                         </md-code>
 
                         <md-link>
-                            <button type="button" class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-700 dark:text-gray-300" title="{{ __('livewire-markdown-editor::editor.toolbars.link') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.link') }}">
                                 <x-phosphor-link class="size-5" aria-hidden="true" />
                             </button>
                         </md-link>
 
-                        <div class="w-px h-5 bg-gray-200 dark:bg-gray-700 mx-1.5"></div>
+                        <div class="w-px h-5 bg-zinc-200 dark:bg-zinc-700 mx-1.5"></div>
 
                         <md-unordered-list>
-                            <button type="button" class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-700 dark:text-gray-300" title="{{ __('livewire-markdown-editor::editor.toolbars.unordered_list') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.unordered_list') }}">
                                 <x-phosphor-list-bullets class="size-5" aria-hidden="true" />
                             </button>
                         </md-unordered-list>
 
                         <md-ordered-list>
-                            <button type="button" class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-700 dark:text-gray-300" title="{{ __('livewire-markdown-editor::editor.toolbars.ordered_list') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.ordered_list') }}">
                                 <x-phosphor-list-numbers class="size-5" aria-hidden="true" />
                             </button>
                         </md-ordered-list>
 
                         <md-task-list>
-                            <button type="button" class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300" title="{{ __('livewire-markdown-editor::editor.toolbars.task_list') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.task_list') }}">
                                 <x-phosphor-list-checks class="size-5" aria-hidden="true" />
                             </button>
                         </md-task-list>
 
-                        <div class="w-px h-5 bg-gray-200 dark:bg-gray-700 mx-1.5"></div>
+                        <div class="w-px h-5 bg-zinc-200 dark:bg-zinc-700 mx-1.5"></div>
 
                         <md-mention>
-                            <button type="button" class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300" title="{{ __('livewire-markdown-editor::editor.toolbars.mention') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.mention') }}">
                                 <x-phosphor-at-duotone class="size-5" aria-hidden="true" />
                             </button>
                         </md-mention>
 
                         @if ($showUpload)
-                            <label class="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-gray-700 dark:text-gray-300" title="{{ __('livewire-markdown-editor::editor.toolbars.attach_files') }}">
+                            <label class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 cursor-pointer text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.attach_files') }}">
                                 <input type="file" wire:model="attachments" multiple accept="image/*,.pdf,.doc,.docx" class="hidden">
                                 <x-phosphor-images-duotone class="size-5" aria-hidden="true" />
                             </label>
@@ -114,7 +114,7 @@
             rows="{{ $rows }}"
             placeholder="{{ $placeholder }}"
             @class([
-                'w-full h-auto p-3 border-0 max-h-138 resize-y focus:outline-none focus:ring-0 text-gray-700 bg-white dark:bg-white/10 dark:text-gray-300 placeholder:text-gray-400 dark:placeholder:text-gray-500',
+                'w-full h-auto p-3 border-0 max-h-138 resize-y focus:outline-none focus:ring-0 text-zinc-700 bg-white dark:bg-white/10 dark:text-zinc-300 placeholder:text-zinc-400 dark:placeholder:text-zinc-500',
                 $class
             ])
         ></textarea>
@@ -126,7 +126,7 @@
             wire:loading.class="opacity-50"
         >
             @if (blank($content))
-                <div class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                <div class="text-sm font-medium text-zinc-700 dark:text-zinc-300">
                     {{ __('livewire-markdown-editor::editor.empty_preview') }}
                 </div>
             @else
@@ -137,7 +137,7 @@
         </div>
     </div>
     <div class="mt-2 flex items-center justify-between">
-        <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax" target="_blank" class="inline-flex items-center px-2 py-0.5 gap-1.5 bg-gray-100 hover:bg-gray-200/70 rounded text-gray-700 dark:text-gray-300 dark:bg-white/10 dark:hover:bg-white/20">
+        <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax" target="_blank" class="inline-flex items-center px-2 py-0.5 gap-1.5 bg-zinc-100 hover:bg-zinc-200/70 rounded text-zinc-700 dark:text-zinc-300 dark:bg-white/10 dark:hover:bg-white/20">
             <x-phosphor-markdown-logo-duotone class="size-5" aria-hidden="true" />
             <span class="text-xs font-medium">
                 {{ __('livewire-markdown-editor::editor.styling') }}
@@ -145,7 +145,7 @@
         </a>
 
         @if ($showUpload)
-            <div wire:loading wire:target="attachments" class="inline-flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+            <div wire:loading.flex wire:target="attachments" class="flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
                 <svg
                     class="animate-spin size-4 text-primary-600"
                     fill="none"
