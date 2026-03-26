@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Mckenziearts\LivewireMarkdownEditor\Livewire;
 
+use Illuminate\Contracts\Filesystem\Cloud;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Storage;
 use League\CommonMark\Environment\Environment;
@@ -72,7 +73,7 @@ final class MarkdownEditor extends Component
             $path = $attachment->store('', $disk);
             $filesystem = Storage::disk($disk);
 
-            /** @var \Illuminate\Contracts\Filesystem\Cloud $filesystem */
+            /** @var Cloud $filesystem */
             $url = $filesystem->url($path);
             $filename = $attachment->getClientOriginalName();
 
