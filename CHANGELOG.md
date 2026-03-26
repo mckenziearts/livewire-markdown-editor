@@ -2,6 +2,14 @@
 
 All notable changes to `livewire-markdown-editor` will be documented in this file.
 
+## v1.2 - 2026-03-26
+
+### What's Changed
+
+* feat: Add laravel 13 support by @mckenziearts in https://github.com/mckenziearts/livewire-markdown-editor/pull/11
+
+**Full Changelog**: https://github.com/mckenziearts/livewire-markdown-editor/compare/v1.1...v1.2
+
 ## v1.1 - 2026-02-02
 
 ### What's Changed
