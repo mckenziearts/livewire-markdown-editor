@@ -2,6 +2,50 @@
 
 All notable changes to `livewire-markdown-editor` will be documented in this file.
 
+## v1.3 - 2026-04-24
+
+### ⚠️ Security
+
+This release patches a **critical** arbitrary file upload vulnerability (CWE-434 + CWE-79) in the markdown editor's attachment handler. All users are encouraged to upgrade immediately.
+
+Any authenticated user could upload HTML, SVG, JavaScript, PHP or other executable files to the configured disk. When the disk was a public cloud bucket (S3, Spaces, R2, Scaleway with `FILESYSTEM_DISK=s3`), uploaded files were served with a guessed `Content-Type`, enabling stored XSS, phishing page hosting, and malware distribution on the application's storage domain. A real-world exploit has been observed in production.
+
+**What's fixed**
+
+- Strict validation (`file`, `image`, `mimes:`, `extensions:`, `max:`) is now enforced on every attachment before any `store()` call
+- Uploaded files are stored under a server-generated random filename with an extension derived from the actual file content (via `finfo`), never from the client-supplied name
+- The original filename is sanitized (control characters and markdown breakout characters stripped, truncated to 100 chars) before being inserted into the markdown output
+- The file input `accept` attribute is now derived from the config instead of a hard-coded allowlist that was never enforced server-side
+
+**Breaking behavioral change**
+
+Only image files are accepted by default. If your application relied on uploading PDF, DOC or other non-image types, publish the config and update the `upload` section:
+
+```bash
+php artisan vendor:publish --tag=livewire-markdown-editor-config
+```
+
+```php
+// config/livewire-markdown-editor.php
+'upload' => [
+'max_size' => 4096,
+'allowed_extensions' => ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif', 'pdf', 'doc', 'docx'],
+'images_only' => false,
+],
+```
+
+If you do not use the attachment feature, disable it entirely via the `show-upload` prop:
+
+```blade
+<livewire:markdown-editor wire:model="content" :show-upload="false" />
+```
+
+### What's Changed
+
+* fix: prevent arbitrary file upload in markdown editor by @mckenziearts in https://github.com/mckenziearts/livewire-markdown-editor/pull/12
+
+**Full Changelog**: https://github.com/mckenziearts/livewire-markdown-editor/compare/v1.2...v1.3
+
 ## v1.2 - 2026-03-26
 
 ### What's Changed
