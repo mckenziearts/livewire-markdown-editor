@@ -96,8 +96,15 @@
                         </md-mention>
 
                         @if ($showUpload)
+                            @php
+                                $uploadConfig = config('livewire-markdown-editor.upload');
+                                $acceptAttribute = $uploadConfig['images_only']
+                                    ? 'image/*'
+                                    : collect($uploadConfig['allowed_extensions'])->map(fn ($ext) => '.'.$ext)->implode(',');
+                            @endphp
+
                             <label class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 cursor-pointer text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.attach_files') }}">
-                                <input type="file" wire:model="attachments" multiple accept="image/*,.pdf,.doc,.docx" class="hidden">
+                                <input type="file" wire:model="attachments" multiple accept="{{ $acceptAttribute }}" class="hidden">
                                 <x-phosphor-images-duotone class="size-5" aria-hidden="true" />
                             </label>
                         @endif
