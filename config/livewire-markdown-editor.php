@@ -28,4 +28,21 @@ return [
     */
 
     'theme' => env('MARKDOWN_EDITOR_THEME', 'github-light'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | File Upload
+    |--------------------------------------------------------------------------
+    |
+    | Controls the file upload behavior of the editor. By default, only images
+    | are allowed to prevent arbitrary file upload vulnerabilities (stored XSS,
+    | phishing page hosting, malware distribution on your storage domain).
+    |
+    */
+
+    'upload' => [
+        'max_size' => 4096,
+        'allowed_extensions' => ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif'],
+        'images_only' => true,
+    ],
 ];

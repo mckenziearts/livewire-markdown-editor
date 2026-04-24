@@ -7,6 +7,7 @@ namespace Mckenziearts\LivewireMarkdownEditor\Livewire;
 use Illuminate\Contracts\Filesystem\Cloud;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\GithubFlavoredMarkdownExtension;
@@ -63,21 +64,49 @@ final class MarkdownEditor extends Component
         return $converter->convert($this->content)->getContent();
     }
 
+    /**
+     * @return array<string, array<int, string|null>>
+     */
+    public function rules(): array
+    {
+        /** @var array{max_size: int, allowed_extensions: array<int, string>, images_only: bool} $config */
+        $config = config('livewire-markdown-editor.upload');
+
+        $extensions = implode(',', $config['allowed_extensions']);
+
+        return [
+            'attachments.*' => array_values(array_filter([
+                'required',
+                'file',
+                $config['images_only'] ? 'image' : null,
+                'mimes:'.$extensions,
+                'extensions:'.$extensions,
+                'max:'.$config['max_size'],
+            ])),
+        ];
+    }
+
     public function updatedAttachments(): void
     {
+        $this->validate();
+
         /** @var string $disk */
         $disk = config('livewire-markdown-editor.disk');
 
         foreach ($this->attachments as $attachment) {
-            /** @var string $path */
-            $path = $attachment->store('', $disk);
-            $filesystem = Storage::disk($disk);
+            $extension = $attachment->extension();
+            $path = $attachment->storeAs('', Str::random(40).'.'.$extension, $disk);
 
+            if ($path === false) {
+                continue;
+            }
+
+            $filesystem = Storage::disk($disk);
             /** @var Cloud $filesystem */
             $url = $filesystem->url($path);
-            $filename = $attachment->getClientOriginalName();
+            $filename = $this->sanitizeFilename($attachment->getClientOriginalName());
 
-            if (str_starts_with($attachment->getMimeType(), 'image/')) {
+            if (str_starts_with((string) $attachment->getMimeType(), 'image/')) {
                 $this->content .= "\n![{$filename}]({$url})\n";
             } else {
                 $this->content .= "\n[{$filename}]({$url})\n";
@@ -90,5 +119,13 @@ final class MarkdownEditor extends Component
     public function render(): View
     {
         return view('livewire-markdown-editor::livewire.markdown-editor');
+    }
+
+    private function sanitizeFilename(string $filename): string
+    {
+        $filename = preg_replace('/[\x00-\x1F\x7F]/u', '', $filename) ?? '';
+        $filename = preg_replace('/[\[\]\(\)<>"\'\\\\`]/', '', $filename) ?? '';
+
+        return Str::limit(trim($filename), 100, '');
     }
 }

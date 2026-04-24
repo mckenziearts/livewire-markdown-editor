@@ -151,12 +151,38 @@ class CreatePost extends Component
 
 ## File Uploads
 
-Files are automatically uploaded to `storage/app/public/` when selected. Images are inserted as `![filename](url)` and other files as `[filename](url)`.
+Files are automatically uploaded to the configured disk when selected. Images are inserted as `![filename](url)` and other files as `[filename](url)`.
 
 Make sure your storage is properly configured:
 
 ```bash
 php artisan storage:link
+```
+
+### Security
+
+To prevent arbitrary file upload vulnerabilities (stored XSS, phishing page hosting, malware distribution), only images are accepted by default. Uploaded files are stored under a randomly generated filename with the validated extension, and the original client-provided filename is sanitized before being inserted into the markdown output.
+
+You can customize the allowed file types and max size via the `upload` config key:
+
+```php
+// config/livewire-markdown-editor.php
+'upload' => [
+    'max_size' => 4096, // kilobytes
+    'allowed_extensions' => ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif'],
+    'images_only' => true,
+],
+```
+
+If you need to allow non-image files, extend `allowed_extensions` and set `images_only` to `false`. When using a public cloud disk (S3, Spaces, R2, Scaleway), review the bucket policy to ensure non-whitelisted Content-Types cannot be served inline.
+
+If you do not use file uploads at all, disable the feature entirely:
+
+```blade
+<livewire:markdown-editor
+    wire:model="content"
+    :show-upload="false"
+/>
 ```
 
 ## Markdown Support
