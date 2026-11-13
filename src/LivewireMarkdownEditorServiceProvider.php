@@ -23,7 +23,7 @@ final class LivewireMarkdownEditorServiceProvider extends ServiceProvider
             ], 'livewire-markdown-editor-config');
 
             $this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/markdown-editor'),
+                __DIR__.'/../resources/views' => resource_path('views/vendor/livewire-markdown-editor'),
             ], 'livewire-markdown-editor-views');
         }
     }

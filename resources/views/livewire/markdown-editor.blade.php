@@ -32,37 +32,37 @@
                         class="flex items-center gap-1 px-2"
                     >
                         <md-header>
-                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.heading') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.heading') }}" aria-label="{{ __('livewire-markdown-editor::editor.toolbars.heading') }}">
                                 <x-phosphor-text-h class="size-5" aria-hidden="true" />
                             </button>
                         </md-header>
 
                         <md-bold>
-                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.bold') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.bold') }}" aria-label="{{ __('livewire-markdown-editor::editor.toolbars.bold') }}">
                                 <x-phosphor-text-b class="size-5" aria-hidden="true" />
                             </button>
                         </md-bold>
 
                         <md-italic>
-                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.italic') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.italic') }}" aria-label="{{ __('livewire-markdown-editor::editor.toolbars.italic') }}">
                                 <x-phosphor-text-italic class="size-5" aria-hidden="true" />
                             </button>
                         </md-italic>
 
                         <md-quote>
-                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.quote') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.quote') }}" aria-label="{{ __('livewire-markdown-editor::editor.toolbars.quote') }}">
                                 <x-phosphor-quotes class="size-5" aria-hidden="true" />
                             </button>
                         </md-quote>
 
                         <md-code>
-                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.code') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.code') }}" aria-label="{{ __('livewire-markdown-editor::editor.toolbars.code') }}">
                                 <x-phosphor-code-simple class="size-5" aria-hidden="true" />
                             </button>
                         </md-code>
 
                         <md-link>
-                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.link') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.link') }}" aria-label="{{ __('livewire-markdown-editor::editor.toolbars.link') }}">
                                 <x-phosphor-link class="size-5" aria-hidden="true" />
                             </button>
                         </md-link>
@@ -70,19 +70,19 @@
                         <div class="w-px h-5 bg-zinc-200 dark:bg-zinc-700 mx-1.5"></div>
 
                         <md-unordered-list>
-                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.unordered_list') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.unordered_list') }}" aria-label="{{ __('livewire-markdown-editor::editor.toolbars.unordered_list') }}">
                                 <x-phosphor-list-bullets class="size-5" aria-hidden="true" />
                             </button>
                         </md-unordered-list>
 
                         <md-ordered-list>
-                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.ordered_list') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.ordered_list') }}" aria-label="{{ __('livewire-markdown-editor::editor.toolbars.ordered_list') }}">
                                 <x-phosphor-list-numbers class="size-5" aria-hidden="true" />
                             </button>
                         </md-ordered-list>
 
                         <md-task-list>
-                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.task_list') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.task_list') }}" aria-label="{{ __('livewire-markdown-editor::editor.toolbars.task_list') }}">
                                 <x-phosphor-list-checks class="size-5" aria-hidden="true" />
                             </button>
                         </md-task-list>
@@ -90,7 +90,7 @@
                         <div class="w-px h-5 bg-zinc-200 dark:bg-zinc-700 mx-1.5"></div>
 
                         <md-mention>
-                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.mention') }}">
+                            <button type="button" class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.mention') }}" aria-label="{{ __('livewire-markdown-editor::editor.toolbars.mention') }}">
                                 <x-phosphor-at-duotone class="size-5" aria-hidden="true" />
                             </button>
                         </md-mention>
@@ -103,8 +103,8 @@
                                     : collect($uploadConfig['allowed_extensions'])->map(fn ($ext) => '.'.$ext)->implode(',');
                             @endphp
 
-                            <label class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 cursor-pointer text-zinc-700 dark:text-zinc-300" title="{{ __('livewire-markdown-editor::editor.toolbars.attach_files') }}">
-                                <input type="file" wire:model="attachments" multiple accept="{{ $acceptAttribute }}" class="hidden">
+                            <label class="p-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 cursor-pointer text-zinc-700 dark:text-zinc-300 focus-within:ring-2 focus-within:ring-primary-500" title="{{ __('livewire-markdown-editor::editor.toolbars.attach_files') }}">
+                                <input type="file" wire:model="attachments" multiple accept="{{ $acceptAttribute }}" aria-label="{{ __('livewire-markdown-editor::editor.toolbars.attach_files') }}" class="sr-only">
                                 <x-phosphor-images-duotone class="size-5" aria-hidden="true" />
                             </label>
                         @endif
@@ -120,8 +120,9 @@
             wire:model.live.debounce.500ms="content"
             rows="{{ $rows }}"
             placeholder="{{ $placeholder }}"
+            aria-label="{{ $label ?? __('livewire-markdown-editor::editor.label') }}"
             @class([
-                'w-full h-auto p-3 border-0 max-h-138 resize-y focus:outline-none focus:ring-0 text-zinc-700 bg-white dark:bg-white/10 dark:text-zinc-300 placeholder:text-zinc-400 dark:placeholder:text-zinc-500',
+                'w-full h-auto p-3 border-0 max-h-138 resize-y focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 text-zinc-700 bg-white dark:bg-white/10 dark:text-zinc-300 placeholder:text-zinc-400 dark:placeholder:text-zinc-500',
                 $class
             ])
         ></textarea>

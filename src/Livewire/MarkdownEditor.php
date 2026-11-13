@@ -15,6 +15,7 @@ use League\CommonMark\Extension\Table\TableExtension;
 use League\CommonMark\Extension\TaskList\TaskListExtension;
 use League\CommonMark\MarkdownConverter;
 use Livewire\Attributes\Computed;
+use Livewire\Attributes\Locked;
 use Livewire\Attributes\Modelable;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
@@ -32,6 +33,9 @@ final class MarkdownEditor extends Component
     public array $attachments = [];
 
     public string $placeholder = 'Leave a comment...';
+
+    #[Locked]
+    public ?string $label = null;
 
     public int $rows = 10;
 

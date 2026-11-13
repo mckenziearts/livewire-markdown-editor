@@ -131,6 +131,7 @@ class CreatePost extends Component
 |---------------|--------|------------------------|----------------------------------------------|
 | `content`     | string | `''`                   | The markdown content (use with `wire:model`) |
 | `placeholder` | string | `'Leave a comment...'` | Textarea placeholder text                    |
+| `label`       | string | `null`                 | Accessible name of the textarea              |
 | `class`       | string | `null`                 | Textarea custom classes                      |
 | `rows`        | int    | `10`                   | Number of textarea rows                      |
 | `showToolbar` | bool   | `true`                 | Show/hide the markdown toolbar               |

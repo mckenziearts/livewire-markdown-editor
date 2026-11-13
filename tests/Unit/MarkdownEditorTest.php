@@ -17,6 +17,26 @@ it('display correct editor content value', function (): void {
         ->assertSet('content', 'foo');
 });
 
+it('names the textarea with the default label', function (): void {
+    Livewire\Livewire::test(MarkdownEditor::class)
+        ->assertSeeHtml('aria-label="Markdown content"');
+});
+
+it('names the textarea with the given label', function (): void {
+    Livewire\Livewire::test(MarkdownEditor::class, ['label' => 'Your reply'])
+        ->assertSeeHtml('aria-label="Your reply"')
+        ->assertDontSeeHtml('aria-label="Markdown content"');
+});
+
+it('gives every icon-only toolbar button an accessible name', function (): void {
+    $html = Livewire\Livewire::test(MarkdownEditor::class)->html();
+
+    preg_match_all('/<button\b[^>]*\btitle="[^>]*>/', $html, $buttons);
+
+    expect($buttons[0])->not->toBeEmpty()
+        ->each->toContain('aria-label="');
+});
+
 it('rejects html file uploads', function (): void {
     Storage::fake('local');
 
