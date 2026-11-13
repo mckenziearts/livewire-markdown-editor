@@ -8,6 +8,7 @@ return [
     'write' => 'Rédiger',
     'preview' => 'Prévisualiser',
     'empty_preview' => 'Rien à prévisualiser',
+    'label' => 'Contenu en Markdown',
 
     'toolbars' => [
         'attach_files' => 'Joindre des fichiers',

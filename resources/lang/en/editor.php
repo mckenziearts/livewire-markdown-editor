@@ -8,6 +8,7 @@ return [
     'write' => 'Write',
     'preview' => 'Preview',
     'empty_preview' => 'Nothing to preview',
+    'label' => 'Markdown content',
 
     'toolbars' => [
         'attach_files' => 'Attach files',
