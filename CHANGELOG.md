@@ -2,6 +2,31 @@
 
 All notable changes to `livewire-markdown-editor` will be documented in this file.
 
+## v1.4 - 2026-11-13
+
+### What's Changed
+
+#### Accessibility
+
+- The textarea has an accessible name. Pass your own with the new `label` property, or keep the translated default ("Markdown content").
+- Each icon button of the toolbar has an `aria-label`.
+- The file upload input can be reached with the keyboard and has a name.
+- The textarea and the upload button show a focus ring on keyboard focus.
+
+```blade
+<livewire:markdown-editor wire:model="content" label="Your reply" />
+
+```
+#### Fixes
+
+- `vendor:publish --tag=livewire-markdown-editor-views` now publishes to `resources/views/vendor/livewire-markdown-editor`. The previous path was never read. If you published the views before, move them to that folder.
+
+#### Maintenance
+
+- Laravel 11 is no longer tested: Composer refuses to install it because of unpatched security advisories. The version constraint is unchanged.
+
+**Full Changelog**: https://github.com/mckenziearts/livewire-markdown-editor/compare/v1.3...v1.4
+
 ## v1.3 - 2026-04-24
 
 ### ⚠️ Security
@@ -23,8 +48,8 @@ Only image files are accepted by default. If your application relied on uploadin
 
 ```bash
 php artisan vendor:publish --tag=livewire-markdown-editor-config
-```
 
+```
 ```php
 // config/livewire-markdown-editor.php
 'upload' => [
@@ -32,14 +57,14 @@ php artisan vendor:publish --tag=livewire-markdown-editor-config
 'allowed_extensions' => ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif', 'pdf', 'doc', 'docx'],
 'images_only' => false,
 ],
-```
 
+```
 If you do not use the attachment feature, disable it entirely via the `show-upload` prop:
 
 ```blade
 <livewire:markdown-editor wire:model="content" :show-upload="false" />
-```
 
+```
 ### What's Changed
 
 * fix: prevent arbitrary file upload in markdown editor by @mckenziearts in https://github.com/mckenziearts/livewire-markdown-editor/pull/12
